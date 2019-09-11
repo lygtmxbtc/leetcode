@@ -19,4 +19,17 @@ def backtrace(cur_list, res_list, mark_list, n_length):
 
 backtrace(tmp,res,mark,len(a))
 
-print(res)
+
+res = []
+N = 4
+def backtrace(s='',left=0,right=0):
+    print(s)
+    if len(s) == 2 * N:
+        res.append(s)
+        return
+    if left < N:
+        backtrace(s+'(',left+1,right)
+    if right < left:
+        backtrace(s+')',left,right+1)
+
+backtrace()
